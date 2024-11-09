@@ -5,9 +5,12 @@ import google.generativeai as genai
 from PIL import Image
  
 load_dotenv()
- 
-genai.configure(api_key="AIzaSyB5Hu-Mv2VceYQVTZR32BJW6YTQ_P5y4is")
- 
+# 환경 변수에서 API 키 가져오기
+api_key = os.getenv("GENAI_API_KEY")
+
+# API 키 설정
+genai.configure(api_key=api_key)
+
 st.set_page_config(page_title="Image Chat Bot",page_icon="🗣️")
  
 st.header("My Image Chat Bot Web Application of SON")
